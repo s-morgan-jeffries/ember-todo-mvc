@@ -6,45 +6,14 @@
     </header>
 
     <section id="main">
-        <ul id="todo-list">
-            {{#each todo in model itemController="todo"}}
-              <li {{bind-attr class="todo.isCompleted:completed todo.isEditing:editing"}}>
-                  {{#if todo.isEditing}}
-                      {{!--<input class="edit">--}}
+        {{outlet}}
 
-                    {{edit-todo class="edit" value=todo.title focus-out="acceptChanges" insert-newline="acceptChanges"}}
-                  {{else}}
-                    {{input type="checkbox" checked=todo.isCompleted class="toggle"}}
-                      <label {{action "editTodo" on="doubleClick"}}>{{todo.title}}</label>
-                      <button class="destroy"></button>
-                  {{/if}}
-              </li>
-            {{/each}}
-        </ul>
-
-        <input type="checkbox" id="toggle-all">
+        {{!--<input type="checkbox" id="toggle-all">--}}
+      {{input type="checkbox" id="toggle-all" checked=allAreDone}}
     </section>
 
-    <footer id="footer">
-        <span id="todo-count">
-          <strong>{{remaining}}</strong> {{inflection}} left
-        </span>
-        <ul id="filters">
-            <li>
-                <a href="all" class="selected">All</a>
-            </li>
-            <li>
-                <a href="active">Active</a>
-            </li>
-            <li>
-                <a href="completed">Completed</a>
-            </li>
-        </ul>
+    {{partial "todos-footer"}}
 
-        <button id="clear-completed">
-            Clear completed (1)
-        </button>
-    </footer>
 </section>
 
 <footer id="info">
