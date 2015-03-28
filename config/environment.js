@@ -2,9 +2,9 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'todo-mvc',
+    modulePrefix: 'ember-todo-mvc',
     environment: environment,
-    baseURL: '/todo-mvc',
+    baseURL: '/ember-todo-mvc',
     locationType: 'hash',
     EmberENV: {
       FEATURES: {
@@ -40,7 +40,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.baseURL = '/ember-todomvc'
+    ENV.baseURL = '/ember-todo-mvc'
   }
 
   return ENV;
