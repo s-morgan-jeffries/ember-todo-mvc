@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'ember-todo-mvc',
     environment: environment,
-    baseURL: '/ember-todo-mvc',
+    baseURL: '/',
     locationType: 'hash',
     EmberENV: {
       FEATURES: {
